@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Day X</title>
+    </head>
+    <body>
+        <p id="only-main-site">
+            Load endpoint for the day.
+            For example ip:port/day1
+        </p>
+        <script>
+            const path = window.location.pathname.split('/').pop();
+            if(path)
+            {
+                const script = document.createElement('script');
+                script.src = `/js/${path}`;
+                document.body.appendChild(script);
+
+                document.title = `Day ${path.replace('day', '')}`;
+
+                const script2 = document.createElement('script');
+                script2.src = `/days_only.js`;
+                document.body.appendChild(script2);
+            }
+        </script>
+    </body>
+</html>
