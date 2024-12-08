@@ -26,24 +26,13 @@ function solution(input_string_array)
     list1.sort((a,b) => a - b);
     list2.sort((a,b) => a - b);
 
-    console.log(`List 1`);
-    console.log(list1);
-
-    console.log(`List 2`);
-    console.log(list2);
-
     let total_distance = 0;
     for(let i = 0; i < elements_count; i++)
     {
         distance = Math.abs(list1[i] - list2[i])
-        console.log("distance");
-        console.log(distance);
 
         total_distance += distance;
     }
-
-    console.log("total_distance");
-    console.log(total_distance);
 
     return total_distance;
 }
